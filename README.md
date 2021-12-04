@@ -1,2 +1,2 @@
-# motivate-me-study-time-tracker-project-1
+# motivate-me-studytime-tracker-project-1
 A web application 
