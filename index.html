@@ -5,61 +5,82 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="tbd">
         <link rel="stylesheet" href="./develop/css/style.css">
-        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
         <title>Feed Me Food Finder</title>
     </head>
 
     <body>
-        <header class="">
+        <header class="has-text-centered is-size-1">
             <h1>Feed Me Food Finder</h1>
         </header>
-
-        <container>
+        <br>
+        <br>
+        <!-- Drop down menu to select if dinning in or eating out-->
+        <container class="has-text-centered is-size-4">
             <div>
-                <h2>
-                    Are you dining in or eating out?
-                </h2>
-                <div id="inOutDropdown">
-
-                </div>
-            </div>
+                <div class="dropdown is-active">
+                    <div class="dropdown-trigger">
+                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                        <span>Are you dining in or eating out?</span>
+                        <span class="icon is-small">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                      <div class="dropdown-content">
+                        <a href="#" class="dropdown-item">
+                          Dining In
+                        </a>
+                        <a class="dropdown-item">
+                          Eating Out
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+            </div>    
+            <br>
+            <br>
         </container>
-        <container id = "diningIn">
-            <label for = "mood">What are you in the mood for?</label>
+        <!-- If eating in, input keywords for search results-->
+        <container id="diningIn" class="has-text-centered is-size-6">
+            <label for="mood">What are you in the mood for?</label>
             <input type="text" name = "mood"> </input>
-            <btn>Search</btn>
+            <btn class="button">Search</btn>
 
-            <div id = "recipeResults">
-                
-            </div>
+            <div id="recipeResults"></div>
             <div>
-                <btn id = "acceptRecipe">
+                <btn id="acceptRecipe" class="button">
                     Accept
                 </btn>
-                <btn id="declineRecipe">
+                <btn id="declineRecipe" class="button">
                     Try Again
                 </btn>
             </div>
+            <!-- Rate recipe -->
             <input type="text" name="recipeRating" placeholder="Rate your recipe 1-5"></input>
         </container>
-        <container id = "eatingOut">
+        <br>
+        <br>
+        <!-- If dining out, input zip code and keywords for search results-->
+        <container id="eatingOut" class="has-text-centered">
             <label for="zipCode">Enter your Zip Code:</label>
             <input type="text" placeholder="Zip Code" name="zipCode"></input>
-            <label for = "mood">What are you in the mood for?</label>
+            <br>
+            <label for="mood">What are you in the mood for?</label>
             <input type="text" name = "mood"> </input>
-            <btn>Search</btn>
+            <btn class="button">Search</btn>
 
-            <div id = "restaurantResults">
-                
-            </div>
+            <div id="restaurantResults"></div>
             <div>
-                <btn id = "acceptRestaurant">
+                <btn id="acceptRestaurant" class="button">
                     Accept
                 </btn>
-                <btn id="declineRestaurant">
+                <btn id="declineRestaurant" class="button">
                     Try Again
                 </btn>
             </div>
+            <!-- Rate restaurant -->
             <input type="text" name="restaurantRating" placeholder="Rate the restaurant 1-5"></input>
         </container>
     </body>
