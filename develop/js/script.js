@@ -5,6 +5,11 @@ var diningInChoiceEl = $("#diningInChoice");
 var eatingOutChoiceEl = $("#eatingOutChoice");
 var recipeRatingEl = $("#recipeRating");
 var restaurantRatingEl = $("#restaurantRating");
+var APIKey = '94a7e955bd8b4bbdbd0a552e1666b62b';
+var diningInInputEl = $('#diningInInput');
+var diningInInputVal = diningInInputEl.val().replace(' ',',');
+var spoonacularLink = 'https://api.spoonacular.com/recipes/random?number=1&apiKey='+APIKey+'&titleMatch='+diningInInputVal;
+var diningInSearchEl = $('#diningInSearch');
 
 //Remove elements from view
 diningInEl.remove();
@@ -23,6 +28,17 @@ function displayEatingOutEl () {
     initialChoiceEl.remove();
 };
 
+function searchRecipes (){
+    fetch(spoonacularLink)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data);
+    })
+}
+
 //Add event listeners to buttons
 diningInChoiceEl.on("click", displayDiningInEl);
 eatingOutChoiceEl.on("click", displayEatingOutEl);
+diningInSearchEl.on('click', searchRecipes)
