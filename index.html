@@ -16,9 +16,9 @@
         <br>
         <br>
         <!-- Drop down menu to select if dinning in or eating out-->
-        <container class="has-text-centered is-size-4">
+        <container class="has-text-centered is-size-4"id="initialChoice">
             <div>
-                <div class="dropdown is-active">
+                <div class="dropdown is-hoverable">
                     <div class="dropdown-trigger">
                       <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
                         <span>Are you dining in or eating out?</span>
@@ -29,10 +29,10 @@
                     </div>
                     <div class="dropdown-menu" id="dropdown-menu" role="menu">
                       <div class="dropdown-content">
-                        <a href="#" class="dropdown-item">
+                        <a href="#" id="diningInChoice" class="dropdown-item">
                           Dining In
                         </a>
-                        <a class="dropdown-item">
+                        <a id="eatingOutChoice" class="dropdown-item">
                           Eating Out
                         </a>
                       </div>
@@ -58,7 +58,7 @@
                 </btn>
             </div>
             <!-- Rate recipe -->
-            <input type="text" name="recipeRating" placeholder="Rate your recipe 1-5"></input>
+            <input id= "recipeRating" type="text" name="recipeRating" placeholder="Rate your recipe 1-5"></input>
         </container>
         <br>
         <br>
@@ -81,6 +81,8 @@
                 </btn>
             </div>
             <!-- Rate restaurant -->
-            <input type="text" name="restaurantRating" placeholder="Rate the restaurant 1-5"></input>
+            <input id="restaurantRating" type="text" name="restaurantRating" placeholder="Rate the restaurant 1-5"></input>
         </container>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script src="./develop/js/script.js"></script>
     </body>
