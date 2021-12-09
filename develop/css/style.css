@@ -1,4 +1,16 @@
 .dropdown-content {
     width: 145%;
     text-align: center;
-} 
+}
+
+body, html {
+    background-image: url("https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+ header {
+     background-color: rgba(70, 182, 59, 0.5)
+ }
