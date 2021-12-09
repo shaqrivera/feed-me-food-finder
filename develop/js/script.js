@@ -7,8 +7,6 @@ var recipeRatingEl = $("#recipeRating");
 var restaurantRatingEl = $("#restaurantRating");
 var APIKey = '94a7e955bd8b4bbdbd0a552e1666b62b';
 var diningInInputEl = $('#diningInInput');
-var diningInInputVal = diningInInputEl.val().replace(' ',',');
-var spoonacularLink = 'https://api.spoonacular.com/recipes/random?number=1&apiKey='+APIKey+'&titleMatch='+diningInInputVal;
 var diningInSearchEl = $('#diningInSearch');
 
 //Remove elements from view
@@ -29,11 +27,14 @@ function displayEatingOutEl () {
 };
 
 function searchRecipes (){
+    var diningInInputVal = diningInInputEl.val().replace(' ',',');
+    var spoonacularLink = 'https://api.spoonacular.com/recipes/complexSearch?apiKey='+APIKey+'&query='+diningInInputVal;
     fetch(spoonacularLink)
     .then(function(response){
         return response.json();
     })
     .then(function(data){
+        
         console.log(data);
     })
 }
