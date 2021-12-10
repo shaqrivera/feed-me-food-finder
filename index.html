@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="tbd">
-        <link rel="stylesheet" href="./develop/css/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <link rel="stylesheet" href="./develop/css/style.css">
         <title>Feed Me Food Finder</title>
     </head>
 
@@ -44,10 +44,11 @@
         </container>
         <!-- If eating in, input keywords for search results-->
         <container id="diningIn" class="has-text-centered is-size-6">
+            <div id="diningInMood">
             <label for="mood">What are you in the mood for?</label>
             <input type="text" name = "mood" id="diningInInput"> </input>
             <btn id="diningInSearch" class="button">Search</btn>
-
+            </div>
             <div id="recipeResults"></div>
             <div>
                 <btn id="acceptRecipe" class="button">
@@ -59,6 +60,7 @@
             </div>
             <!-- Rate recipe -->
             <input id= "recipeRating" type="text" name="recipeRating" placeholder="Rate your recipe 1-5"></input>
+            <btn id="recipeRatingSubmit" class="button">Submit Rating</btn>
         </container>
         <br>
         <br>
