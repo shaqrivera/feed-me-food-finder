@@ -14,3 +14,12 @@ body, html {
  header {
      background-color: rgba(70, 182, 59, 0.5)
  }
+
+ .rating {
+    width: 500px;
+ }
+ 
+ .rating__star {
+    cursor: pointer;
+    color: #dabd18b2;
+ }

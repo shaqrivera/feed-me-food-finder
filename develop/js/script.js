@@ -55,7 +55,8 @@ function searchRecipes (){
                 
             }
             function submitRecipeRating(){
-                localStorage.setItem(data.title,recipeRatingEl.val())  
+                // NEED TO FIX LOCAL STORAGE 
+                localStorage.setItem(data.title,starClassActive.length)  
             }
             recipeRatingSubmitEl.on('click', submitRecipeRating);
             
@@ -73,9 +74,7 @@ function showRecipeRating() {
     
 };
 
-
 //Add event listeners to buttons
-
 eatingOutChoiceEl.on("click", displayEatingOutEl);
 diningInSearchEl.on('click', searchRecipes);
 diningInChoiceEl.on("click", displayDiningInEl);

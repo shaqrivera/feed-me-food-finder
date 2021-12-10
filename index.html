@@ -59,7 +59,13 @@
                 </btn>
             </div>
             <!-- Rate recipe -->
-            <input id= "recipeRating" type="text" name="recipeRating" placeholder="Rate your recipe 1-5"></input>
+            <div class="recipeRating" id="recipeRating">
+                <i class="rating__star far fa-star fa-5x"></i>
+                <i class="rating__star far fa-star fa-5x"></i>
+                <i class="rating__star far fa-star fa-5x"></i>
+                <i class="rating__star far fa-star fa-5x"></i>
+                <i class="rating__star far fa-star fa-5x"></i>
+          </div>
             <btn id="recipeRatingSubmit" class="button">Submit Rating</btn>
         </container>
         <br>
@@ -83,8 +89,17 @@
                 </btn>
             </div>
             <!-- Rate restaurant -->
-            <input id="restaurantRating" type="text" name="restaurantRating" placeholder="Rate the restaurant 1-5"></input>
+            <div class="restaurantRating" id="restaurantRating">
+                <i class="rating__star far fa-star"></i>
+                <i class="rating__star far fa-star"></i>
+                <i class="rating__star far fa-star"></i>
+                <i class="rating__star far fa-star"></i>
+                <i class="rating__star far fa-star"></i>
+            </div>
+            <btn id="restaurantRatingSubmit" class="button">Submit Rating</btn>
         </container>
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script src="https://kit.fontawesome.com/bd477150f9.js" crossorigin="anonymous"></script>
+        <script src="./develop/js/ratings.js"></script>
         <script src="./develop/js/script.js"></script>
     </body>
