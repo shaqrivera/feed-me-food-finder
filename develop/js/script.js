@@ -15,6 +15,7 @@ var acceptRecipeEl = $('#acceptRecipe');
 var diningInMoodEl = $('#diningInMood');
 var recipeRatingSubmitEl = $('#recipeRatingSubmit');
 
+
 //Remove elements from view
 diningInEl.remove();
 eatingOutEl.remove();
@@ -51,12 +52,16 @@ function searchRecipes (){
             console.log(data);
             recipeResultsEl.append('<h1>'+data.title+'</h1>' +data.instructions)
             for (let index = 0; index < data.extendedIngredients.length; index++) {
-                recipeResultsEl.append('<li>'+data.extendedIngredients[index].original+'</li>');
-                
+                recipeResultsEl.append('<li>'+data.extendedIngredients[index].original+'</li>');   
             }
+            var recipeTitle = data.title;
+            var activeStars = $('.fas');
+            console.log(activeStars);
+
             function submitRecipeRating(){
                 // NEED TO FIX LOCAL STORAGE 
-                localStorage.setItem(data.title,starClassActive.length)  
+                console.log(activeStars)
+                localStorage.setItem(recipeTitle,activeStars); 
             }
             recipeRatingSubmitEl.on('click', submitRecipeRating);
             
