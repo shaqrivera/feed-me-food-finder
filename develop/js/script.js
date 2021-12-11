@@ -36,6 +36,7 @@ function displayEatingOutEl () {
 };
 
 function searchRecipes (){
+    // Prepares the users input to be used as a parameter for spoonacular API
     var diningInInputVal = diningInInputEl.val().replace(' ',',');
     var spoonacularLink = 'https://api.spoonacular.com/recipes/complexSearch?apiKey='+spoonAPIKey+'&query='+diningInInputVal;
     fetch(spoonacularLink)
@@ -44,6 +45,7 @@ function searchRecipes (){
     })
     .then(function(data){
         recipeResultsEl.empty();
+        // Returns a random recipe based off users input "mood"
         var recipeInformationLink = 'https://api.spoonacular.com/recipes/'+data.results[[Math.floor(Math.random()*data.results.length)]].id+'/information?apiKey='+spoonAPIKey;
         fetch(recipeInformationLink)
         .then(function(response){
@@ -51,14 +53,14 @@ function searchRecipes (){
         })
         .then(function(data){
             console.log(data);
+            // Returns ingredients and instructions  for random recipe 
             recipeResultsEl.append('<h1>'+data.title+'</h1>' +data.instructions)
             for (let index = 0; index < data.extendedIngredients.length; index++) {
                 recipeResultsEl.append('<li>'+data.extendedIngredients[index].original+'</li>');   
             }
             var recipeTitle = data.title;
-            var activeStars = $('.fas');
-            console.log(activeStars);
 
+            // Saving recipe rating to local storage 
             recipeRatingEl.on("click", checkStars)
                 function checkStars(event) {
                     var starValue = event.target.id.split("-")[1];
@@ -85,20 +87,13 @@ function searchRestaurants() {
     var eatingOutInputVal = eatingOutInputEl.val().replace(' ',',');
 
     var yelpLink = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location='+zipCodeVal+'&term='+eatingOutInputVal;
-    /* var req = new Request(yelpLink, {
-        method: 'GET',
-        headers: new Headers({
-            'Authorization': 'Bearer ${yelpAPIKey}',
-            'Content-Type': 'application/json'
-        })
-    }) */
+
     fetch(yelpLink, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${yelpAPIKey}`,
             'Content-Type': 'application/json'
         },
-        credentials: 'include'
         })
 
         .then(function(response) {
@@ -106,6 +101,11 @@ function searchRestaurants() {
         })
         .then(function(data) {
             console.log(data);
+            eatingOutEl.append(data.businesses[0].name);
+            
+            for (let index = 0; index < data.businesses[0].location.display_address.length; index++) {
+                eatingOutEl.append(data.businesses[0].location.display_address[index])
+            }
         })
 }   
 
