@@ -58,12 +58,19 @@ function searchRecipes (){
             var activeStars = $('.fas');
             console.log(activeStars);
 
-            function submitRecipeRating(){
+            recipeRatingEl.on("click", checkStars)
+                function checkStars(event) {
+                    var starValue = event.target.id.split("-")[1];
+
+                    console.log(starValue);
+            }
+
+        /*    function submitRecipeRating() {
                 // NEED TO FIX LOCAL STORAGE 
-                console.log(activeStars)
+                console.log(starRating)
                 localStorage.setItem(recipeTitle,activeStars); 
             }
-            recipeRatingSubmitEl.on('click', submitRecipeRating);
+            recipeRatingSubmitEl.on('click', submitRecipeRating); */
             
         })
         
