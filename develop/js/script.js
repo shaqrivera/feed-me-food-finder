@@ -13,7 +13,9 @@ var recipeResultsEl = $('#recipeResults');
 var declineRecipeEl = $('#declineRecipe');
 var acceptRecipeEl = $('#acceptRecipe');
 var diningInMoodEl = $('#diningInMood');
-var recipeRatingSubmitEl = $('#recipeRatingSubmit');
+var eatingOutInputEl = $('#eatingOutInput');
+var eatingOutZipCodeEl = $('#zipCode');
+var eatingOutSearchEl = $('#eatingOutSearch');
 
 
 //Remove elements from view
@@ -21,7 +23,6 @@ diningInEl.remove();
 eatingOutEl.remove();
 restaurantRatingEl.remove();
 recipeRatingEl.remove();
-recipeRatingSubmitEl.remove();
 
 function displayDiningInEl () {
     $("body").append(diningInEl);
@@ -61,16 +62,10 @@ function searchRecipes (){
             recipeRatingEl.on("click", checkStars)
                 function checkStars(event) {
                     var starValue = event.target.id.split("-")[1];
+                    localStorage.setItem(recipeTitle,starValue); 
 
                     console.log(starValue);
             }
-
-        /*    function submitRecipeRating() {
-                // NEED TO FIX LOCAL STORAGE 
-                console.log(starRating)
-                localStorage.setItem(recipeTitle,activeStars); 
-            }
-            recipeRatingSubmitEl.on('click', submitRecipeRating); */
             
         })
         
@@ -82,13 +77,42 @@ function showRecipeRating() {
     declineRecipeEl.remove();
     diningInMoodEl.remove();
     diningInEl.append(recipeRatingEl);
-    diningInEl.append(recipeRatingSubmitEl);
     
 };
 
+function searchRestaurants() {
+    var zipCodeVal = eatingOutZipCodeEl.val();
+    var eatingOutInputVal = eatingOutInputEl.val().replace(' ',',');
+
+    var yelpLink = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location='+zipCodeVal+'&term='+eatingOutInputVal;
+    /* var req = new Request(yelpLink, {
+        method: 'GET',
+        headers: new Headers({
+            'Authorization': 'Bearer ${yelpAPIKey}',
+            'Content-Type': 'application/json'
+        })
+    }) */
+    fetch(yelpLink, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${yelpAPIKey}`,
+            'Content-Type': 'application/json'
+        },
+        credentials: 'include'
+        })
+
+        .then(function(response) {
+            return response.json()
+        })
+        .then(function(data) {
+            console.log(data);
+        })
+}   
+
 //Add event listeners to buttons
-eatingOutChoiceEl.on("click", displayEatingOutEl);
+eatingOutChoiceEl.on('click', displayEatingOutEl);
 diningInSearchEl.on('click', searchRecipes);
-diningInChoiceEl.on("click", displayDiningInEl);
+diningInChoiceEl.on('click', displayDiningInEl);
 declineRecipeEl.on('click',searchRecipes);
 acceptRecipeEl.on('click', showRecipeRating);
+eatingOutSearchEl.on('click', searchRestaurants);
