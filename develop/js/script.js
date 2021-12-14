@@ -5,7 +5,7 @@ var diningInChoiceEl = $("#diningInChoice");
 var eatingOutChoiceEl = $("#eatingOutChoice");
 var recipeRatingEl = $("#recipeRating");
 var restaurantRatingEl = $("#restaurantRating");
-var spoonAPIKey = '94a7e955bd8b4bbdbd0a552e1666b62b';
+var spoonAPIKey = '2a32ed3305214e199c763a474e6dd932';
 var yelpAPIKey = 'QK9VRlMeHsRVRkocggvEgEpTj0UlSioqD2c69TNDAE6LotIPGH46MU5hfG1vlQ_m-xJA25EEhJfkp1-hsnKjNtniB-ROWHnR_HpY3h1T-poiQKhq21pAcGKaJJyyYXYx'
 var diningInInputEl = $('#diningInInput');
 var diningInSearchEl = $('#diningInSearch');
@@ -16,7 +16,10 @@ var diningInMoodEl = $('#diningInMood');
 var eatingOutInputEl = $('#eatingOutInput');
 var eatingOutZipCodeEl = $('#zipCode');
 var eatingOutSearchEl = $('#eatingOutSearch');
-
+var declineRestaurantEl = $('#declineRestaurant');
+var acceptRestaurantEl= $('#acceptRestaurant');
+var restaurantResultsEl = $('#restaurantResults');
+var eatingOutMoodEl = $('#eatingOutMood')
 
 //Remove elements from view
 diningInEl.remove();
@@ -64,7 +67,7 @@ function searchRecipes (){
             recipeRatingEl.on("click", checkStars)
                 function checkStars(event) {
                     var starValue = event.target.id.split("-")[1];
-                    localStorage.setItem(recipeTitle,starValue); 
+                    localStorage.setItem('Recipe: '+recipeTitle,starValue); 
 
                     console.log(starValue);
             }
@@ -83,6 +86,7 @@ function showRecipeRating() {
 };
 
 function searchRestaurants() {
+    restaurantResultsEl.empty();
     var zipCodeVal = eatingOutZipCodeEl.val();
     var eatingOutInputVal = eatingOutInputEl.val().replace(' ',',');
 
@@ -101,13 +105,30 @@ function searchRestaurants() {
         })
         .then(function(data) {
             console.log(data);
-            eatingOutEl.append(data.businesses[0].name);
+            var randomRestaurant = data.businesses[[Math.floor(Math.random()*data.businesses.length)]]
+            console.log(randomRestaurant);
+            restaurantResultsEl.append(randomRestaurant.name);
             
-            for (let index = 0; index < data.businesses[0].location.display_address.length; index++) {
-                eatingOutEl.append(data.businesses[0].location.display_address[index])
+            for (let index = 0; index < randomRestaurant.location.display_address.length; index++) {
+                restaurantResultsEl.append(randomRestaurant.location.display_address[index])  
             }
+            var restaurantTitle = randomRestaurant.name;
+            restaurantRatingEl.on("click", checkStars)
+                function checkStars(event) {
+                    var starValue = event.target.id.split("-")[1];
+                    localStorage.setItem('Restaurant: '+restaurantTitle,starValue); 
+
+                    console.log(starValue);
+            };
         })
-}   
+}
+
+function showRestaurantRating() {
+    eatingOutEl.append(restaurantRatingEl);
+    acceptRestaurantEl.remove();
+    declineRestaurantEl.remove();
+    eatingOutMoodEl.remove();
+}
 
 //Add event listeners to buttons
 eatingOutChoiceEl.on('click', displayEatingOutEl);
@@ -116,3 +137,5 @@ diningInChoiceEl.on('click', displayDiningInEl);
 declineRecipeEl.on('click',searchRecipes);
 acceptRecipeEl.on('click', showRecipeRating);
 eatingOutSearchEl.on('click', searchRestaurants);
+declineRestaurantEl.on('click', searchRestaurants);
+acceptRestaurantEl.on('click', showRestaurantRating);

@@ -72,13 +72,14 @@
         <br>
         <!-- If dining out, input zip code and keywords for search results-->
         <container id="eatingOut" class="has-text-centered">
+            <div id='eatingOutMood'>
             <label for="zipCode">Enter your Zip Code:</label>
-            <input id="zipCode" type="text" placeholder="Zip Code" name="zipCode"></input>
+            <input id="zipCode" type="text" placeholder="Zip Code" name="zipCode"></input>         
             <br>
             <label for="mood">What are you in the mood for?</label>
             <input type="text" name = "mood" id="eatingOutInput"> </input>
             <btn id ="eatingOutSearch" class="button">Search</btn>
-
+            </div>
             <div id="restaurantResults"></div>
             <div>
                 <btn id="acceptRestaurant" class="button">
@@ -90,11 +91,11 @@
             </div>
             <!-- Rate restaurant -->
             <div class="restaurantRating" id="restaurantRating">
-                <i id="restaurantStar1" class="rating__star far fa-star"></i>
-                <i id="restaurantStar2" class="rating__star far fa-star"></i>
-                <i id="restaurantStar3" class="rating__star far fa-star"></i>
-                <i id="restaurantStar4" class="rating__star far fa-star"></i>
-                <i id="restaurantStar5" class="rating__star far fa-star"></i>
+                <i id="restaurantStar-1" class="rating__star far fa-star fa-5x"></i>
+                <i id="restaurantStar-2" class="rating__star far fa-star fa-5x"></i>
+                <i id="restaurantStar-3" class="rating__star far fa-star fa-5x"></i>
+                <i id="restaurantStar-4" class="rating__star far fa-star fa-5x"></i>
+                <i id="restaurantStar-5" class="rating__star far fa-star fa-5x"></i>
             </div>
         </container>
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
