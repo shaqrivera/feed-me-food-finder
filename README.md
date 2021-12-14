@@ -1,7 +1,6 @@
 # feed-me-food-finder-project-1
 A web application 
 
-server-side-APIs-weather-dashboard-6
 ## 07 Project 1: Feed Me Food Finder
 
 ### Description: 
