@@ -1,2 +1,43 @@
 # feed-me-food-finder-project-1
 A web application 
+
+server-side-APIs-weather-dashboard-6
+## 07 Project 1: Feed Me Food Finder
+
+### Description: 
+#### This project is a random recipe and restaurant generator created by Jessica Haff, Shaquille Rivera, and Keisa Portress. 
+<br>
+<br>
+
+### User Story:
+```
+AS a User
+I WANT to pick if I am dining in or eating out
+SO THAT a random recipe or local restaurant will generate
+```
+### Acceptance Criteria:
+```
+GIVEN I am dining in
+WHEN I select dining 
+THEN a random recipe idea populates
+WHEN I select eating out
+THEN I input my zip code
+WHEN I input my zip code
+THEN a random local restaurant populates
+WHEN I accept a recipe or restaurant
+THEN I can rate it on a scale of 1-5
+WHEN I rate it
+THEN it saves the rating for me to view later
+```
+<br>
+
+### Links
+[Link to Live Webpage](https://jesshaff.github.io/feed-me-food-finder-project-1/)
+
+[Link to Github Repository](https://github.com/jesshaff/feed-me-food-finder-project-1)
+
+<br>
+
+### Screenshots
+## -Working Code-
+![Webpage](insert link to screenshot here)
