@@ -5,7 +5,7 @@ var diningInChoiceEl = $("#diningInChoice");
 var eatingOutChoiceEl = $("#eatingOutChoice");
 var recipeRatingEl = $("#recipeRating");
 var restaurantRatingEl = $("#restaurantRating");
-var spoonAPIKey = '2a32ed3305214e199c763a474e6dd932';
+var spoonAPIKey = '94a7e955bd8b4bbdbd0a552e1666b62b';
 var yelpAPIKey = 'QK9VRlMeHsRVRkocggvEgEpTj0UlSioqD2c69TNDAE6LotIPGH46MU5hfG1vlQ_m-xJA25EEhJfkp1-hsnKjNtniB-ROWHnR_HpY3h1T-poiQKhq21pAcGKaJJyyYXYx'
 var diningInInputEl = $('#diningInInput');
 var diningInSearchEl = $('#diningInSearch');
@@ -19,7 +19,9 @@ var eatingOutSearchEl = $('#eatingOutSearch');
 var declineRestaurantEl = $('#declineRestaurant');
 var acceptRestaurantEl= $('#acceptRestaurant');
 var restaurantResultsEl = $('#restaurantResults');
-var eatingOutMoodEl = $('#eatingOutMood')
+var eatingOutMoodEl = $('#eatingOutMood');
+var acceptDeclineRecipeEl = $('#acceptDeclineRecipe');
+var acceptDeclineRestaurantEl= $('#acceptDeclineRestaurant');
 
 //Remove elements from view
 diningInEl.remove();
@@ -29,12 +31,14 @@ recipeRatingEl.remove();
 
 function displayDiningInEl () {
     $("body").append(diningInEl);
+    acceptDeclineRecipeEl.remove();
     initialChoiceEl.remove();
 };
 
 
 function displayEatingOutEl () {
     $("body").append(eatingOutEl);
+    acceptDeclineRestaurantEl.remove();
     initialChoiceEl.remove();
 };
 
@@ -74,8 +78,15 @@ function searchRecipes (){
             }
             
         })
+        .then( function(){
+        recipeResultsEl.append(acceptDeclineRecipeEl); 
+        declineRecipeEl.on('click',searchRecipes);
+        acceptRecipeEl.on('click', showRecipeRating);   
+        })
+        
         
     })
+    
 }
 
 function showRecipeRating() {
@@ -122,6 +133,12 @@ function searchRestaurants() {
                     console.log(starValue);
             };
         })
+        .then(function(){
+            eatingOutSearchEl.remove();
+            restaurantResultsEl.append(acceptDeclineRestaurantEl); 
+            declineRestaurantEl.on('click',searchRestaurants);
+            acceptRestaurantEl.on('click', showRestaurantRating);
+        })
 }
 
 function showRestaurantRating() {
@@ -135,8 +152,8 @@ function showRestaurantRating() {
 eatingOutChoiceEl.on('click', displayEatingOutEl);
 diningInSearchEl.on('click', searchRecipes);
 diningInChoiceEl.on('click', displayDiningInEl);
-declineRecipeEl.on('click',searchRecipes);
-acceptRecipeEl.on('click', showRecipeRating);
+//declineRecipeEl.on('click',searchRecipes);
+//acceptRecipeEl.on('click', showRecipeRating);
 eatingOutSearchEl.on('click', searchRestaurants);
-declineRestaurantEl.on('click', searchRestaurants);
-acceptRestaurantEl.on('click', showRestaurantRating);
+//declineRestaurantEl.on('click', searchRestaurants);
+//acceptRestaurantEl.on('click', showRestaurantRating);

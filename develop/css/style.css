@@ -89,7 +89,7 @@ label {
     padding: 20px;
  }
 
-li {
+ #ratedItems li {
     background-color: rgba(255, 255, 255, 0.8);
     padding-left: 20px;
     padding-right: 20px;
