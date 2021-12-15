@@ -57,10 +57,11 @@ function searchRecipes (){
         .then(function(data){
             console.log(data);
             // Returns ingredients and instructions  for random recipe 
-            recipeResultsEl.append('<h1>'+data.title+'</h1>' +data.instructions)
+            recipeResultsEl.append('<h1>'+data.title+'</h1>')
             for (let index = 0; index < data.extendedIngredients.length; index++) {
                 recipeResultsEl.append('<li>'+data.extendedIngredients[index].original+'</li>');   
             }
+            recipeResultsEl.append(data.instructions)
             var recipeTitle = data.title;
 
             // Saving recipe rating to local storage 
