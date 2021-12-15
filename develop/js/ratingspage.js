@@ -13,7 +13,7 @@ function allStorage() {
 
         function showRatings(){
             for (let index = 0; index < keys.length; index++) {
-                ratedItemsEl.append('<li>'+keys[index]+' Rating: '+values[index]+'</li>');
+                ratedItemsEl.append('<li>'+keys[index]+'&nbsp &nbsp &nbsp <b>Rating:</b> '+values[index]+'</li>');
                 //ratedItemsEl.append(values[index]);
                 
             }

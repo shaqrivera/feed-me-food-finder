@@ -68,7 +68,7 @@ function searchRecipes (){
             recipeRatingEl.on("click", checkStars)
                 function checkStars(event) {
                     var starValue = event.target.id.split("-")[1];
-                    localStorage.setItem('Recipe: '+recipeTitle,starValue); 
+                    localStorage.setItem('<b>Recipe: </b>'+recipeTitle,starValue); 
 
                     console.log(starValue);
             }
@@ -108,16 +108,16 @@ function searchRestaurants() {
             console.log(data);
             var randomRestaurant = data.businesses[[Math.floor(Math.random()*data.businesses.length)]]
             console.log(randomRestaurant);
-            restaurantResultsEl.append(randomRestaurant.name);
+            restaurantResultsEl.append(randomRestaurant.name+"<br>");
             
             for (let index = 0; index < randomRestaurant.location.display_address.length; index++) {
-                restaurantResultsEl.append(randomRestaurant.location.display_address[index])  
+                restaurantResultsEl.append(randomRestaurant.location.display_address[index]+"<br>")  
             }
             var restaurantTitle = randomRestaurant.name;
             restaurantRatingEl.on("click", checkStars)
                 function checkStars(event) {
                     var starValue = event.target.id.split("-")[1];
-                    localStorage.setItem('Restaurant: '+restaurantTitle,starValue); 
+                    localStorage.setItem('<b>Restaurant: </b>'+restaurantTitle,starValue); 
 
                     console.log(starValue);
             };

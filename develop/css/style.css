@@ -61,11 +61,22 @@ label {
  
 .rating__star {
     cursor: pointer;
-    color: #dabd18b2;
+    color: #e7ca23ea;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
-#recipeResults {
+#recipeResults, #restaurantResults {
     background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+ }
+
+ #recipeResults {
+    font-size: 20px;
+ }
+
+ #restaurantResults {
+    font-size: 25px;
  }
 
  h1 {
@@ -73,17 +84,18 @@ label {
     font-size: 40px;
  }
 
-
-
  p {
     text-align: left;
     padding: 20px;
  }
 
 li {
+    background-color: rgba(255, 255, 255, 0.8);
     padding-left: 20px;
     padding-right: 20px;
     text-align: left;
+    list-style: none;
+    text-align: center;
 }
 
 li:first-child {
