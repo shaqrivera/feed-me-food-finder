@@ -24,12 +24,36 @@ header {
     margin: auto;
     background-color: rgba(70, 182, 59, 0.5);
     padding: 25px;
+    margin-top: 25px;
 }
 
 .dropdown-content {
     width: 145%;
     text-align: center;
 }
+
+.input {
+    width: 20%;
+    background-color: rgba(70, 182, 59, 0.5);
+}
+
+.input:focus {
+    border-color: slategray;
+}
+
+#zipCode {
+    width: 15%;
+}
+
+label {
+    font-size: 30px;
+}
+
+#diningInMood, #eatingOutMood {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+}
+
 
 .rating {
     width: 500px;
@@ -49,8 +73,10 @@ header {
     font-size: 40px;
  }
 
+
+
  p {
-     text-align: left;
+    text-align: left;
     padding: 20px;
  }
 

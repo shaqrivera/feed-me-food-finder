@@ -50,7 +50,7 @@
         <container id="diningIn" class="has-text-centered is-size-6">
             <div id="diningInMood">
             <label for="mood">What are you in the mood for?</label>
-            <input type="text" name = "mood" id="diningInInput"> </input>
+            <input class="input is-normal" type="text" name = "mood" id="diningInInput" placeholder="Ex. Chicken"> </input>
             <btn id="diningInSearch" class="button">Search</btn>
             </div>
             <div id="recipeResults"></div>
@@ -69,7 +69,7 @@
                 <i id="recipeStar-3" class="rating__star far fa-star fa-5x"></i>
                 <i id="recipeStar-4" class="rating__star far fa-star fa-5x"></i>
                 <i id="recipeStar-5" class="rating__star far fa-star fa-5x"></i>
-          </div>
+            </div>
             
         </container>
         <br>
@@ -78,10 +78,12 @@
         <container id="eatingOut" class="has-text-centered">
             <div id='eatingOutMood'>
             <label for="zipCode">Enter your Zip Code:</label>
-            <input id="zipCode" type="text" placeholder="Zip Code" name="zipCode"></input>         
+            <input class="input is-normal" id="zipCode" type="text" placeholder="Zip Code" name="zipCode"></input>         
+            <br>
             <br>
             <label for="mood">What are you in the mood for?</label>
-            <input type="text" name = "mood" id="eatingOutInput"> </input>
+            <input class="input is-normal" type="text" name = "mood" id="eatingOutInput" placeholder="Ex. Mexican"> </input>
+            <br>
             <btn id ="eatingOutSearch" class="button">Search</btn>
             </div>
             <div id="restaurantResults"></div>
