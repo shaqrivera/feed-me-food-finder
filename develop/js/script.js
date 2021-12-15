@@ -61,7 +61,7 @@ function searchRecipes (){
             for (let index = 0; index < data.extendedIngredients.length; index++) {
                 recipeResultsEl.append('<li>'+data.extendedIngredients[index].original+'</li>');   
             }
-            recipeResultsEl.append(data.instructions)
+            recipeResultsEl.append('<p>'+data.instructions+'</p>')
             var recipeTitle = data.title;
 
             // Saving recipe rating to local storage 

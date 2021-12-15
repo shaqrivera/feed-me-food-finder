@@ -20,6 +20,8 @@ body, html {
 }
 
 header {
+    width: 40%;
+    margin: auto;
     background-color: rgba(70, 182, 59, 0.5);
     padding: 25px;
 }
@@ -36,4 +38,36 @@ header {
 .rating__star {
     cursor: pointer;
     color: #dabd18b2;
+}
+
+#recipeResults {
+    background-color: rgba(255, 255, 255, 0.8);
+ }
+
+ h1 {
+    padding: 20px;
+    font-size: 40px;
+ }
+
+ol {
+    display: none;
+ }
+
+ p {
+     text-align: left;
+    padding: 20px;
+ }
+
+li {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+}
+
+li:first-child {
+    padding-top: 20px;
+}
+
+li:last-child {
+    padding-bottom: 20px;
 }
