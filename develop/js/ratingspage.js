@@ -13,6 +13,7 @@ function allStorage() {
         //return values;
 
         function showRatings(){
+            values = values.reverse();
             for (let index = 0; index < keys.length; index++) {
                 ratedItemsEl.append('<li>'+keys[index]+'&nbsp &nbsp &nbsp <b>Rating:</b> '+values[index]+'</li>');
                 //ratedItemsEl.append(values[index]);
