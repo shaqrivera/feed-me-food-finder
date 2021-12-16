@@ -8,7 +8,8 @@ function allStorage() {
         while ( i-- ) {
             values.push( localStorage.getItem(keys[i]) );
         }
-        console.log(keys+values);
+        console.log(keys);
+        console.log(values);
         //return values;
 
         function showRatings(){
