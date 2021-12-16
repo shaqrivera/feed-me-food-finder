@@ -22,6 +22,8 @@ var restaurantResultsEl = $('#restaurantResults');
 var eatingOutMoodEl = $('#eatingOutMood');
 var acceptDeclineRecipeEl = $('#acceptDeclineRecipe');
 var acceptDeclineRestaurantEl= $('#acceptDeclineRestaurant');
+var recipeStarsEl = $('#recipeStars');
+var restaurantStarsEl = $('#restaurantStars');
 
 //Remove elements from view
 diningInEl.remove();
@@ -69,7 +71,7 @@ function searchRecipes (){
             var recipeTitle = data.title;
 
             // Saving recipe rating to local storage 
-            recipeRatingEl.on("click", checkStars)
+            recipeStarsEl.children().on("click", checkStars)
                 function checkStars(event) {
                     var starValue = event.target.id.split("-")[1];
                     localStorage.setItem('<b>Recipe: </b>'+recipeTitle,starValue); 
@@ -125,7 +127,7 @@ function searchRestaurants() {
                 restaurantResultsEl.append(randomRestaurant.location.display_address[index]+"<br>")  
             }
             var restaurantTitle = randomRestaurant.name;
-            restaurantRatingEl.on("click", checkStars)
+            restaurantStarsEl.children().on("click", checkStars)
                 function checkStars(event) {
                     var starValue = event.target.id.split("-")[1];
                     localStorage.setItem('<b>Restaurant: </b>'+restaurantTitle,starValue); 
