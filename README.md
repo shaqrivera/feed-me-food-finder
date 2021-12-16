@@ -8,6 +8,11 @@ A web application
 <br>
 <br>
 
+### Notes: 
+#### In order to use this app in it's current state of development, you must first enable CORS on (https://cors-anywhere.herokuapp.com). 
+<br>
+<br>
+
 ### User Story:
 ```
 AS a User
