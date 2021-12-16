@@ -39,4 +39,6 @@ THEN it saves the rating for me to view later
 
 ### Screenshots
 ## -Working Code-
-![Webpage](insert link to screenshot here)
+![Landing Page](assets/feed-me-food-finder-landing-page.png)
+![My Ratings Page](assets/feed-me-food-finder-my-ratings-page.png)
+
