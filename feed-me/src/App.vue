@@ -1,0 +1,110 @@
+<script setup lang="ts">
+
+</script>
+
+<template>
+   <div class="top-nav">
+            <a class="active" href="index.html">Home</a>
+            <a href="myratings.html">My Ratings</a>
+        </div>
+        <header class="has-text-centered is-size-1">
+            <h1 class="title is-1 p-4 has-text-light">Feed Me Food Finder</h1>
+        </header>
+        <br>
+        <br>
+        <!-- Drop down menu to select if dinning in or eating out-->
+        <container class="has-text-centered is-size-4" id="initialChoice">
+            <div>
+                <div class="dropdown is-hoverable">
+                    <div class="dropdown-trigger">
+                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                        <span>Are you dining in or eating out?</span>
+                        <span class="icon is-small">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                      <div class="dropdown-content">
+                        <a href="#" id="diningInChoice" class="dropdown-item">
+                          Dining In
+                        </a>
+                        <a id="eatingOutChoice" class="dropdown-item">
+                          Eating Out
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+            </div>    
+            <br>
+            <br>
+        </container>
+        <!-- If eating in, input keywords for search results-->
+        <container id="diningIn" class="has-text-centered is-size-6">
+            <div id="diningInMood">
+            <label for="mood">What are you in the mood for?</label>
+            <input class="input is-normal" type="text" name = "mood" id="diningInInput" placeholder="Ex. Chicken"> </input>
+            <btn id="diningInSearch" class="button">Search</btn>
+            </div>
+            <div id="recipeResults"></div>
+            <div id="acceptDeclineRecipe">
+                <btn id="acceptRecipe" class="button">
+                    Accept
+                </btn>
+                <btn id="declineRecipe" class="button">
+                    Try Again
+                </btn>
+            </div>
+            <!-- Rate recipe -->
+            <div class="recipeRating" id="recipeRating">
+                <h1> Rate your recipe!</h1>
+                <div id='recipeStars'>
+                <i id="recipeStar-1" class="rating__star far fa-star fa-5x"></i>
+                <i id="recipeStar-2" class="rating__star far fa-star fa-5x"></i>
+                <i id="recipeStar-3" class="rating__star far fa-star fa-5x"></i>
+                <i id="recipeStar-4" class="rating__star far fa-star fa-5x"></i>
+                <i id="recipeStar-5" class="rating__star far fa-star fa-5x"></i>
+                </div>
+            </div>
+            
+        </container>
+        <br>
+        <br>
+        <!-- If dining out, input zip code and keywords for search results-->
+        <container id="eatingOut" class="has-text-centered">
+            <div id='eatingOutMood'>
+            <label for="zipCode">Enter your Zip Code:</label>
+            <input class="input is-normal" id="zipCode" type="text" placeholder="Zip Code" name="zipCode"></input>         
+            <br>
+            <br>
+            <label for="mood">What are you in the mood for?</label>
+            <input class="input is-normal" type="text" name = "mood" id="eatingOutInput" placeholder="Ex. Mexican"> </input>
+            <br>
+            <btn id ="eatingOutSearch" class="button">Search</btn>
+            </div>
+            <div id="restaurantResults"></div>
+            <div id="acceptDeclineRestaurant">
+                <btn id="acceptRestaurant" class="button">
+                    Accept
+                </btn>
+                <btn id="declineRestaurant" class="button">
+                    Try Again
+                </btn>
+            </div>
+            <!-- Rate restaurant -->
+            <div class="restaurantRating" id="restaurantRating">
+                <h1> Rate your restaurant!</h1>
+                <div id="restaurantStars">
+                <i id="restaurantStar-1" class="rating__star far fa-star fa-5x"></i>
+                <i id="restaurantStar-2" class="rating__star far fa-star fa-5x"></i>
+                <i id="restaurantStar-3" class="rating__star far fa-star fa-5x"></i>
+                <i id="restaurantStar-4" class="rating__star far fa-star fa-5x"></i>
+                <i id="restaurantStar-5" class="rating__star far fa-star fa-5x"></i>
+                </div>
+            </div>
+        </container>
+</template>
+
+<style scoped>
+
+</style>
