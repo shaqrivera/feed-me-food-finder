@@ -146,7 +146,7 @@ export const RECIPE_SCHEMA = {
       "originalId": { "type": "string", "nullable": true },
       "spoonacularScore": { "type": "number" },
       "spoonacularSourceUrl": { "type": "string", "format": "uri" }
-    },
+    }
 } 
 
 export const SEARCH_RECIPE_OPTIONS = {

@@ -9,3 +9,5 @@ export type WithId<T> = T & {
 export type Session = FastifySessionObject & { authenticated: boolean | undefined }
 
 export type RouteConfig = FastifyRouteConfig & { secured: boolean }
+
+export type Optional<T> = T | undefined

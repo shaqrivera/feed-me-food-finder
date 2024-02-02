@@ -5,107 +5,107 @@ export const RESTAURANT_SCHEMA = {
     "type": "object",
     "properties": {
         "id": {
-            "type": "string"
+          "type": "string"
         },
         "alias": {
-            "type": "string"
+          "type": "string"
         },
         "name": {
-            "type": "string"
+          "type": "string"
         },
         "image_url": {
-            "type": "string",
-            "format": "uri"
+          "type": "string",
+          "format": "uri"
         },
         "is_closed": {
-            "type": "boolean"
+          "type": "boolean"
         },
         "url": {
-            "type": "string",
-            "format": "uri"
+          "type": "string",
+          "format": "uri"
         },
         "review_count": {
-            "type": "integer"
+          "type": "integer"
         },
         "categories": {
-            "type": "array",
-            "items": {
+          "type": "array",
+          "items": {
             "type": "object",
             "properties": {
-                "alias": {
+              "alias": {
                 "type": "string"
-                },
-                "title": {
+              },
+              "title": {
                 "type": "string"
-                }
-            },
+              }
             }
+          }
         },
         "rating": {
-            "type": "number"
+          "type": "number"
         },
         "coordinates": {
-            "type": "object",
-            "properties": {
+          "type": "object",
+          "properties": {
             "latitude": {
-                "type": "number"
+              "type": "number"
             },
             "longitude": {
-                "type": "number"
+              "type": "number"
             }
-            },
+          }
         },
         "transactions": {
-            "type": "array",
-            "items": {
+          "type": "array",
+          "items": {
             "type": "string"
-            }
+          }
         },
         "price": {
-            "type": "string"
+          "type": "string"
         },
         "location": {
-            "type": "object",
-            "properties": {
+          "type": "object",
+          "properties": {
             "address1": {
-                "type": "string"
+              "type": "string"
             },
             "address2": {
-                "type": "string"
+              "type": "string"
             },
             "address3": {
-                "type": "string"
+              "type": "string"
             },
             "city": {
-                "type": "string"
+              "type": "string"
             },
             "zip_code": {
-                "type": "string"
+              "type": "string"
             },
             "country": {
-                "type": "string"
+              "type": "string"
             },
             "state": {
-                "type": "string"
+              "type": "string"
             },
             "display_address": {
-                "type": "array",
-                "items": {
+              "type": "array",
+              "items": {
                 "type": "string"
-                }
+              }
             }
-            },
+          }
         },
         "phone": {
-            "type": "string"
+          "type": "string"
         },
         "display_phone": {
-            "type": "string"
+          "type": "string"
         },
         "distance": {
-            "type": "number"
+          "type": "number"
         }
-    },
+      }
   }
   
   export const SEARCH_RESTAURANT_OPTIONS = {
